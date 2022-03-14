@@ -142,12 +142,12 @@ a {
 }
 
 .WelcomeView {
-  background: url("food.jpg") left bottom;
+  background: url("background.jpg") left bottom;
   background-size: cover;
 }
 
 .UserView {
-  background: url("https://cdn.auth0.com/blog/whatabyte-portal/patio.jpeg") left
+  background: url("background.jpg") left
     bottom;
   background-size: cover;
 }
