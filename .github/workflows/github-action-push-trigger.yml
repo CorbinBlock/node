@@ -16,4 +16,6 @@ jobs:
           ls ${{ github.workspace }} >> /dev/null
           sudo apt-get install nodejs,npm,tree >> /dev/null
           tree
+          cd myapp
+          npm install
       - run: echo "🍏 This job's status is ${{ job.status }}."
