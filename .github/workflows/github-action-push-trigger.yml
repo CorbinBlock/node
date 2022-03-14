@@ -14,7 +14,9 @@ jobs:
       - name: Execute shell commands on the runner
         run: |
           ls ${{ github.workspace }} >> /dev/null
-          sudo apt-get install nodejs,npm,tree >> /dev/null
+          sudo apt-get install nodejs >> /dev/null
+          sudo apt-get install npm >> /dev/null
+          sudo apt-get install tree >> /dev/null
           tree
           cd myapp
           npm install
