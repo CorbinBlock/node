@@ -7,16 +7,10 @@ block layout-content
       div.Title
         h3 Proceed to view your
         h1 user profile:
-      pre.Details=JSON.stringify(userProfile, null, 2)
+      pre.Details=JSON.stringify(userProfile, null, 2) 
     div.NavButtons
-      a(href="//docs.python.org/3/library/")
-        div.NavButton python std lib 
-    div.NavButtons
-      a(href="//unix-01-debian:8080/job/prod/view/All/builds")
-        div.NavButton Jenkins 
-    div.NavButtons
-      a(href="//github.com/CorbinBlock")
-        div.NavButton Github 
+      a(href="/links")
+        div.NavButton View Links
     div.NavButtons
       a(href="/logout")
         div.NavButton Log out

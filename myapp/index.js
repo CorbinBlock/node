@@ -34,6 +34,10 @@ app.get("/user", (req, res) => {
   res.render("user", { title: "Profile", userProfile: { nickname: "cblock" } });
 });
 
+app.get("/links", (req, res) => {
+  res.render("links", { title: "URLs", userProfile: { nickname: "cblock" } });
+});
+
 app.get("/logout", (req, res) => {
   res.render("index", { title: "Home" });
 });
