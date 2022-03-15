@@ -2,11 +2,11 @@ extends layout
 
 block layout-content
   div.View.UserView
-    h1.Banner Howdy, #{userProfile.nickname}!
+    h1.Banner Hi there, #{userProfile.nickname}!
     div.Message
       div.Title
-        h3 Proceed to view your
-        h1 user profile:
+        h3 View your
+        h1 saved links:
       pre.Details=JSON.stringify(userProfile, null, 2)
     div.NavButtons
       a(href="//aws.amazon.com/")
@@ -38,6 +38,9 @@ block layout-content
     div.NavButtons
       a(href="//music.youtube.com")
         div.NavButton youtube music
+    div.NavButtons
+      a(href="/user")
+        div.NavButton View User profile
     div.NavButtons
       a(href="/logout")
         div.NavButton Log out

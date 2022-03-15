@@ -2,7 +2,7 @@ extends layout
 
 block layout-content
   div.View.UserView
-    h1.Banner Howdy, #{userProfile.nickname}!
+    h1.Banner Hi there, #{userProfile.nickname}!
     div.Message
       div.Title
         h3 Proceed to view your
@@ -11,6 +11,9 @@ block layout-content
     div.NavButtons
       a(href="/links")
         div.NavButton View Links
+    div.NavButtons
+      a(href="/work_links")
+        div.NavButton View Work Links
     div.NavButtons
       a(href="/logout")
         div.NavButton Log out
