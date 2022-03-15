@@ -41,6 +41,12 @@ app.get("/AD", (req, res) => {
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
+app.get("/batch", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-Batch"'
+  shell.execShellCommand(cmd);
+  res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
 app.get("/boot", (req, res) => {
   const cmd = 'pwsh.exe -c "Get-LastBootTime"'
   shell.execShellCommand(cmd);
@@ -51,6 +57,12 @@ app.get("/dbeaver", (req, res) => {
   const cmd = 'pwsh.exe -c "Enter-DBeaver"'
   shell.execShellCommand(cmd);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
+app.get("/dirs", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-ExpDirs"'
+  shell.execShellCommand(cmd);
+  res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/disk", (req, res) => {
@@ -83,6 +95,12 @@ app.get("/memory", (req, res) => {
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
+app.get("/reboot", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-Process msedge, code, dbeaver | Stop-Process; Restart-Computer"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
 app.get("/start", (req, res) => {
   const cmd = 'pwsh.exe -c "Start-Programs"'
   shell.execShellCommand(cmd);
@@ -103,6 +121,10 @@ app.get("/RDP", (req, res) => {
 
 app.get("/user", (req, res) => {
   res.render("user", { title: "Profile", userProfile: { nickname: "cblock" } });
+});
+
+app.get("/work_commands", (req, res) => {
+  res.render("work_commands", { title: "URLs", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/work_links", (req, res) => {

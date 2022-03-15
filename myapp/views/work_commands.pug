@@ -2,18 +2,18 @@ extends layout
 
 block layout-content
   div.View.UserView
-    h1.Banner #{userProfile.nickname}'s command interface
+    h1.Banner #{userProfile.nickname}'s work command interface
     div.Message
       div.Title
         h3 Execute commands under
         h1 user account:
       pre.Details=JSON.stringify(userProfile, null, 2)
     div.NavButtons
-      a(href="/local")
-        div.NavButton Local Commands
+      a(href="/batch")
+        div.NavButton Get Batch
     div.NavButtons
-      a(href="/work_commands")
-        div.NavButton Work Commands
+      a(href="/dirs")
+        div.NavButton Get Dirs
     div.NavButtons
       a(href="/user")
         div.NavButton View User Profile
