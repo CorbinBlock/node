@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 app.get("/user", (req, res) => {
   res.render("user", { title: "Profile", userProfile: { nickname: "cblock" } });
-}); 
+});
 
 app.get("/logout", (req, res) => {
   res.render("index", { title: "Home" });
