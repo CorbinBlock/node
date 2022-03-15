@@ -2,15 +2,15 @@ extends layout
 
 block layout-content
   div.View.UserView
-    h1.Banner Hi there, #{userProfile.nickname}!
+    h1.Banner #{userProfile.nickname}'s command interface
     div.Message
       div.Title
-        h3 Proceed to view your
-        h1 user profile:
+        h3 Execute commands under
+        h1 user account:
       pre.Details=JSON.stringify(userProfile, null, 2)
     div.NavButtons
-      a(href="/commands")
-        div.NavButton View Commands
+      a(href="/list_files")
+        div.NavButton Execute Shell
     div.NavButtons
       a(href="/links")
         div.NavButton View Links
