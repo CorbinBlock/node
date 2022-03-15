@@ -9,11 +9,20 @@ block layout-content
         h1 user account:
       pre.Details=JSON.stringify(userProfile, null, 2)
     div.NavButtons
+      a(href="/ad")
+        div.NavButton Get Creds: ad
+    div.NavButtons
+      a(href="/git")
+        div.NavButton Get Creds: git
+    div.NavButtons
+      a(href="/boot")
+        div.NavButton Get Last Boot
+    div.NavButtons
       a(href="/dbeaver")
         div.NavButton Start DBeaver
     div.NavButtons
-      a(href="/boot")
-        div.NavButton Last Boot Time
+      a(href="/RDP")
+        div.NavButton Start RDP
     div.NavButtons
       a(href="/user")
         div.NavButton View User Profile

@@ -35,6 +35,12 @@ app.get("/commands", (req, res) => {
   res.render("commands", { title: "Commands" , userProfile: { nickname: "cblock" }});
 });
 
+app.get("/AD", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-Creds ad"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
 app.get("/boot", (req, res) => {
   const cmd = 'pwsh.exe -c "Get-LastBootTime"'
   shell.execShellCommand(cmd);
@@ -43,6 +49,12 @@ app.get("/boot", (req, res) => {
 
 app.get("/dbeaver", (req, res) => {
   const cmd = 'pwsh.exe -c "Enter-DBeaver"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
+app.get("/git", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-Creds git"'
   shell.execShellCommand(cmd);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
@@ -57,6 +69,12 @@ app.get("/local", (req, res) => {
 
 app.get("/logout", (req, res) => {
   res.render("index", { title: "Home" });
+});
+
+app.get("/RDP", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-Creds admin; Enter-RDP"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/user", (req, res) => {
