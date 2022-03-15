@@ -9,11 +9,5 @@ block layout-content
         h1 user account:
       pre.Details=JSON.stringify(userProfile, null, 2)
     div.NavButtons
-      a(href="/shell")
-        div.NavButton Execute Shell
-    div.NavButtons
-      a(href="/user")
-        div.NavButton View User Profile
-    div.NavButtons
-      a(href="/logout")
-        div.NavButton Log out
+    <script type = "text/javascript" src="execute_shell.js"></script>    
+    <input type = "button" onclick = "execShellCommand()" value = "Display">  

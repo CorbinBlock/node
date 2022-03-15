@@ -34,6 +34,10 @@ app.get("/commands", (req, res) => {
   res.render("commands", { title: "Commands" , userProfile: { nickname: "cblock" }});
 });
 
+app.get("/shell", (req, res) => {
+  res.render("shell", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
 app.get("/links", (req, res) => {
   res.render("links", { title: "URLs", userProfile: { nickname: "cblock" } });
 });
