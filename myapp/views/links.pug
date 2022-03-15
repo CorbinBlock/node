@@ -2,12 +2,7 @@ extends layout
 
 block layout-content
   div.View.UserView
-    h1.Banner Hi there, #{userProfile.nickname}!
-    div.Message
-      div.Title
-        h3 View your
-        h1 saved links:
-      pre.Details=JSON.stringify(userProfile, null, 2)
+    h1.Banner #{userProfile.nickname}'s links
     div.NavButtons
       a(href="//aws.amazon.com/")
         div.NavButton AWS
@@ -17,6 +12,9 @@ block layout-content
     div.NavButtons
       a(href="https://hckrnews.com/")
         div.NavButton Hacker News
+    div.NavButtons
+      a(href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference")
+        div.NavButton Javascript docs
     div.NavButtons
       a(href="//devenvrhel.ddns.net:8081/view/all/builds")
         div.NavButton Jenkins 
