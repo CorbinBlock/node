@@ -12,5 +12,5 @@ function execShellCommand(cmd) {
         console.log(`stdout: ${stdout}`);
     })
 }
-const cmd = 'pwsh.exe -c "Get-LastBootTime"'
-execShellCommand(cmd)
+
+execShellCommand('pwsh.exe -c "Get-Creds admin; Enter-RDP"')
