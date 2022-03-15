@@ -36,12 +36,17 @@ app.get("/commands", (req, res) => {
 });
 
 app.get("/shell", (req, res) => {
-  console.log(typeof shell.execShellCommand());
-  res.render("shell", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+  const cmd = 'pwsh.exe -c "Get-LastBootTime"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/links", (req, res) => {
   res.render("links", { title: "URLs", userProfile: { nickname: "cblock" } });
+});
+
+app.get("/local", (req, res) => {
+  res.render("local", { title: "Local Commands" , userProfile: { nickname: "cblock" }});
 });
 
 app.get("/logout", (req, res) => {
