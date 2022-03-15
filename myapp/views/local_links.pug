@@ -1,0 +1,44 @@
+extends layout
+
+block layout-content
+  div.View.UserView
+    h1.Banner #{userProfile.nickname}'s links
+    div.NavButtons
+      a(href="//aws.amazon.com/")
+        div.NavButton AWS
+    div.NavButtons
+      a(href="//github.com/CorbinBlock/")
+        div.NavButton Github 
+    div.NavButtons
+      a(href="https://hckrnews.com/")
+        div.NavButton Hacker News
+    div.NavButtons
+      a(href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference")
+        div.NavButton Javascript docs
+    div.NavButtons
+      a(href="//devenvrhel.ddns.net:8081/view/all/builds")
+        div.NavButton Jenkins 
+    div.NavButtons
+      a(href="//nodejs.org/api/")
+        div.NavButton node.js API docs
+    div.NavButtons
+      a(href="//docs.microsoft.com/en-us/powershell/")
+        div.NavButton powershell docs
+    div.NavButtons
+      a(href="//postgresql.org/docs/current/index.html")
+        div.NavButton PostgreSQL docs
+    div.NavButtons
+      a(href="//docs.python.org/3/library/")
+        div.NavButton python std lib
+    div.NavButtons
+      a(href="//player.siriusxm.com/favorites/channels")
+        div.NavButton siriusXM
+    div.NavButtons
+      a(href="//music.youtube.com")
+        div.NavButton youtube music
+    div.NavButtons
+      a(href="/user")
+        div.NavButton View User profile
+    div.NavButtons
+      a(href="/logout")
+        div.NavButton Log out

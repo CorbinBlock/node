@@ -77,6 +77,11 @@ app.get("/git", (req, res) => {
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
+app.get("/local_links", (req, res) => {
+  res.render("local_links", { title: "URLs", userProfile: { nickname: "cblock" } });
+});
+
+
 app.get("/links", (req, res) => {
   res.render("links", { title: "URLs", userProfile: { nickname: "cblock" } });
 });
