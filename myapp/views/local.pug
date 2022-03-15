@@ -2,7 +2,7 @@ extends layout
 
 block layout-content
   div.View.UserView
-    h1.Banner #{userProfile.nickname}'s command interface
+    h1.Banner #{userProfile.nickname}'s local command interface
     div.Message
       div.Title
         h3 Execute commands under
@@ -15,14 +15,26 @@ block layout-content
       a(href="/git")
         div.NavButton Get Creds: git
     div.NavButtons
+      a(href="/disk")
+        div.NavButton Get Disk Usage
+    div.NavButtons
       a(href="/boot")
         div.NavButton Get Last Boot
+    div.NavButtons
+      a(href="/memory")
+        div.NavButton Get Memory Usage
     div.NavButtons
       a(href="/dbeaver")
         div.NavButton Start DBeaver
     div.NavButtons
+      a(href="/start")
+        div.NavButton Start Programs
+    div.NavButtons
       a(href="/RDP")
         div.NavButton Start RDP
+    div.NavButtons
+      a(href="/stop")
+        div.NavButton Stop Programs
     div.NavButtons
       a(href="/user")
         div.NavButton View User Profile

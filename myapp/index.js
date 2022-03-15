@@ -53,6 +53,12 @@ app.get("/dbeaver", (req, res) => {
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
+app.get("/disk", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-DiskUsage"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
 app.get("/git", (req, res) => {
   const cmd = 'pwsh.exe -c "Get-Creds git"'
   shell.execShellCommand(cmd);
@@ -69,6 +75,24 @@ app.get("/local", (req, res) => {
 
 app.get("/logout", (req, res) => {
   res.render("index", { title: "Home" });
+});
+
+app.get("/memory", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-MemoryUsage"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
+app.get("/start", (req, res) => {
+  const cmd = 'pwsh.exe -c "Start-Programs"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
+app.get("/stop", (req, res) => {
+  const cmd = 'pwsh.exe -c "Stop-Programs"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/RDP", (req, res) => {
