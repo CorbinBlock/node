@@ -13,6 +13,7 @@ const path = require("path");
 
 const app = express();
 const port = process.env.PORT || "8000";
+var shell = require('./execute_shell');
 
 /**
  *  App Configuration
@@ -35,6 +36,7 @@ app.get("/commands", (req, res) => {
 });
 
 app.get("/shell", (req, res) => {
+  console.log(typeof shell.execShellCommand());
   res.render("shell", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
