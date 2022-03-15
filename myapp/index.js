@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/user", (req, res) => {
-  res.render("user", { title: "Profile", userProfile: { nickname: "Auth0" } });
+  res.render("user", { title: "Profile", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/logout", (req, res) => {
