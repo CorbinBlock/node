@@ -9,8 +9,11 @@ block layout-content
         h1 user account:
       pre.Details=JSON.stringify(userProfile, null, 2)
     div.NavButtons
-      a(href="/shell")
-        div.NavButton Execute Shell
+      a(href="/dbeaver")
+        div.NavButton Start DBeaver
+    div.NavButtons
+      a(href="/boot")
+        div.NavButton Last Boot Time
     div.NavButtons
       a(href="/user")
         div.NavButton View User Profile

@@ -35,8 +35,14 @@ app.get("/commands", (req, res) => {
   res.render("commands", { title: "Commands" , userProfile: { nickname: "cblock" }});
 });
 
-app.get("/shell", (req, res) => {
+app.get("/boot", (req, res) => {
   const cmd = 'pwsh.exe -c "Get-LastBootTime"'
+  shell.execShellCommand(cmd);
+  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
+app.get("/dbeaver", (req, res) => {
+  const cmd = 'pwsh.exe -c "Enter-DBeaver"'
   shell.execShellCommand(cmd);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
