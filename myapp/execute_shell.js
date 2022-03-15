@@ -1,4 +1,3 @@
-const cmd = 'pwsh.exe -c "Get-LastBootTime"'
 function execShellCommand(cmd) {
     const { exec } = require("child_process");
     exec(cmd, (error, stdout, stderr) => {
@@ -13,4 +12,5 @@ function execShellCommand(cmd) {
         console.log(`stdout: ${stdout}`);
     })
 }
+const cmd = 'pwsh.exe -c "Get-LastBootTime"'
 execShellCommand(cmd)
