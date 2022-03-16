@@ -53,6 +53,16 @@ app.get("/boot", (req, res) => {
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
+
+app.get("/cpu", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-CPUsage"'
+    shell.execShellCommand(cmd);
+    res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
+
+
+
 app.get("/dbeaver", (req, res) => {
   const cmd = 'pwsh.exe -c "Enter-DBeaver"'
   shell.execShellCommand(cmd);
