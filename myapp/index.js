@@ -47,6 +47,20 @@ app.get("/batch", (req, res) => {
   res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
+
+app.get("/batch_rpt", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-BatchRpt | Select-Object -First 10"'
+  shell.execShellCommand(cmd);
+  res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
+
+app.get("/batch_pref", (req, res) => {
+  const cmd = 'pwsh.exe -c "Get-BatchPref"'
+  shell.execShellCommand(cmd);
+  res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
 app.get("/boot", (req, res) => {
   const cmd = 'pwsh.exe -c "Get-LastBootTime"'
   shell.execShellCommand(cmd);
