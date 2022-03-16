@@ -9,5 +9,5 @@ npm i pug
 # npm run dev
 npm i -D browser-sync
 # npm run ui
-mkdir public
-touch public/style.css
+# mkdir public
+# touch public/style.css
