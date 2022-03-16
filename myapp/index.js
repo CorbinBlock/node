@@ -89,6 +89,18 @@ app.get("/dirs", (req, res) => {
   res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
+
+app.get("/db_tables", (req, res) => {
+  const cmd = 'SQLCMD.exe -I -Q "SELECT table_catalog, table_name FROM INFORMATION_SCHEMA.TABLES ORDER BY 2"'
+  shell.execShellCommand(cmd);
+  res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+});
+
+
+app.get("/database", (req, res) => {
+  res.render("database", { title: "Database Commands" , userProfile: { nickname: "cblock" }});
+});
+
 app.get("/disk", (req, res) => {
   const cmd = 'pwsh.exe -c "Get-DiskUsage"'
   shell.execShellCommand(cmd);
