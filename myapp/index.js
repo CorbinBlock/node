@@ -93,7 +93,7 @@ app.get("/dirs", (req, res) => {
 app.get("/db_tables", (req, res) => {
   const cmd = 'SQLCMD.exe -I -Q "SELECT table_catalog, table_name FROM INFORMATION_SCHEMA.TABLES ORDER BY 2"'
   shell.execShellCommand(cmd);
-  res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+  res.render("database", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 
