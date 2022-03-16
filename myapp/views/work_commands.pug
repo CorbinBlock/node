@@ -9,8 +9,11 @@ block layout-content
         h1 user account:
       pre.Details=JSON.stringify(userProfile, null, 2)
     div.NavButtons
+      a(href="/ad")
+        div.NavButton Get Creds: AD
+    div.NavButtons
       a(href="/batch")
-        div.NavButton Get Batch
+        div.NavButton Get Batch: DW
     div.NavButtons
       a(href="/dirs")
         div.NavButton Get Dirs

@@ -38,11 +38,11 @@ app.get("/commands", (req, res) => {
 app.get("/AD", (req, res) => {
   const cmd = 'pwsh.exe -c "Get-Creds ad"'
   shell.execShellCommand(cmd);
-  res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
+  res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/batch", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-Batch"'
+  const cmd = 'pwsh.exe -c "Get-BatchDw | Select-Object -First 10"'
   shell.execShellCommand(cmd);
   res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
