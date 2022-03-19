@@ -6,6 +6,10 @@
 
 const express = require("express");
 const path = require("path");
+const shell_name = "pwsh.exe"
+const option_name = "-c"
+const command = ""
+const command_string = shell_name.concat(' ', option_name, ' ', command)
 
 /**
  * App Variables
@@ -36,56 +40,63 @@ app.get("/commands", (req, res) => {
 });
 
 app.get("/AD", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-Creds ad"'
-  shell.execShellCommand(cmd);
+  const command = "Get-Creds ad"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/batch", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-BatchDw | Select-Object -First 10"'
-  shell.execShellCommand(cmd);
+  const command = '"Get-BatchDw | Select-Object -First 10"'
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 
 app.get("/batch_rpt", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-BatchRpt | Select-Object -First 10"'
-  shell.execShellCommand(cmd);
+  const command = '"Get-BatchRpt | Select-Object -First 10"'
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 
 app.get("/batch_pref", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-BatchPref"'
-  shell.execShellCommand(cmd);
+  const command = '"Get-BatchPref | Select-Object -First 10"'
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/boot", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-LastBootTime"'
-  shell.execShellCommand(cmd);
+  const command = "Get-LastBootTime"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 
 app.get("/cpu", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-CPUsage"'
-    shell.execShellCommand(cmd);
+	const command = "Get-CPUsage"
+    const command_string = shell_name.concat(' ', option_name, ' ', command)
+    shell.execShellCommand(command_string);
     res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 
 
-
 app.get("/dbeaver", (req, res) => {
-  const cmd = 'pwsh.exe -c "Enter-DBeaver"'
-  shell.execShellCommand(cmd);
+  const command = "Enter-DBeaver"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/dirs", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-ExpDirs"'
-  shell.execShellCommand(cmd);
+  const command = "Get-ExpDirs"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("work_commands", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
@@ -102,14 +113,16 @@ app.get("/database", (req, res) => {
 });
 
 app.get("/disk", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-DiskUsage"'
-  shell.execShellCommand(cmd);
+  const command = "Get-DiskUsage"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/git", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-Creds git"'
-  shell.execShellCommand(cmd);
+  const command = "Get-Creds git"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
@@ -131,32 +144,37 @@ app.get("/logout", (req, res) => {
 });
 
 app.get("/memory", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-MemoryUsage"'
-  shell.execShellCommand(cmd);
+  const command = "Get-MemoryUsage"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/reboot", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-Process msedge, code, dbeaver | Stop-Process; Restart-Computer"'
-  shell.execShellCommand(cmd);
+  const command = '"Get-Process msedge, code, dbeaver | Stop-Process; Restart-Computer"'
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/start", (req, res) => {
-  const cmd = 'pwsh.exe -c "Start-Programs"'
-  shell.execShellCommand(cmd);
+  const command = "Start-Programs"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/stop", (req, res) => {
-  const cmd = 'pwsh.exe -c "Stop-Programs"'
-  shell.execShellCommand(cmd);
+  const command = "Stop-Programs"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
 app.get("/RDP", (req, res) => {
-  const cmd = 'pwsh.exe -c "Get-Creds admin; Enter-RDP"'
-  shell.execShellCommand(cmd);
+  const command = "Get-Creds admin; Enter-RDP"
+  const command_string = shell_name.concat(' ', option_name, ' ', command)
+  shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
 });
 
