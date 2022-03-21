@@ -11,3 +11,4 @@ npm i -D browser-sync
 # npm run ui
 # mkdir public
 # touch public/style.css
+npm i better-sqlite3
