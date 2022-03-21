@@ -151,7 +151,7 @@ app.get("/memory", (req, res) => {
 });
 
 app.get("/reboot", (req, res) => {
-  const command = '"Get-Process msedge, code, dbeaver | Stop-Process; Restart-Computer"'
+  const command = '"Get-Process chrome, code, dbeaver | Stop-Process; Restart-Computer"'
   const command_string = shell_name.concat(' ', option_name, ' ', command)
   shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
