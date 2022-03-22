@@ -172,7 +172,7 @@ app.get("/stop", (req, res) => {
 });
 
 app.get("/RDP", (req, res) => {
-  const command = "Get-Creds admin; Enter-RDP"
+  const command = "'Get-Creds admin; Enter-RDP'"
   const command_string = shell_name.concat(' ', option_name, ' ', command)
   shell.execShellCommand(command_string);
   res.render("local", { title: "Execute Shell", userProfile: { nickname: "cblock" } });
